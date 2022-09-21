@@ -1,0 +1,42 @@
+    <!-- header template-->
+   <%- include("header") -%>
+
+        <div class="box" id="heading">
+
+            <!-- Display date -->
+            <h1> <%= listTitle %> </h1>
+        
+        </div>
+
+
+        <div class="box">
+
+            <!--loops through items array from app.js file as it displays on web browser -->
+            <% for (var i = 0; i < newListItems.length; i++) { %>
+
+                <div class="item"> 
+
+                    <input type="checkbox">
+                    <p><%= newListItems[i] %></p>
+
+                </div>
+
+            <% } %>
+
+
+            <!-- display submit button on the web browser and perform on action-->
+            <form class="item" action="/" method="post">
+
+                <!-- after user input item, the input get add to the list-->
+                <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+
+                <!-- app.js retrieve from the value that state the page name which allow the program to determine where to add the item-->
+                <button type="submit" name="list" value=<%= listTitle %> >+</button>
+
+            </form>
+
+        </div>
+
+    <!--footer template-->
+    <%- include("footer") -%>
+
