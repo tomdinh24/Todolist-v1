@@ -4,7 +4,7 @@
 // reference: https://ejs.co/#install 
 const express = require("express");
 const ejs = require("ejs");
-const bodyPareser = require("body-parser");
+const bodyParser = require("body-parser");
 
 // import from date file
 const date = require(__dirname + "/date.js");
@@ -14,7 +14,7 @@ const app = express();
 
 
 // parse through html body
-app.use(bodyPareser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: true}));
 
 // allow express to access static file
 app.use(express.static("public"));
